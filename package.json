@@ -8,7 +8,8 @@
     "react-dom": "^16.8.6",
     "react-pose": "^4.0.8",
     "react-scripts": "3.0.1",
-    "react-spring": "^8.0.20"
+    "react-spring": "^8.0.20",
+    "yarn-install": "^1.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
