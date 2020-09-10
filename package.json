@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "delay": "^4.2.0",
+    "mongoose": "^5.10.4",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-pose": "^4.0.8",
