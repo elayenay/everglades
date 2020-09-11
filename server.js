@@ -1,27 +1,28 @@
+// dendencies
 const express = require("express");
 const mongoose = require("mongoose");
-const routes = require("./routes");
+const routes = require("./routes")
+const passport = require("./authentication/passport");
+
+// setup the port and the express app
+const PORT = process.env.PORT || 4000;
 const app = express();
-const PORT = process.env.PORT || 3001;
-// Configure body parsing for AJAX requests
+
+
+// setup the mongodb database
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/passportJwtExample", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+
+// middlewares for accepting post requests
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// Serve up static assets
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
-// Add routes, both API and view
-app.use(routes);
-// Connect to the Mongo DB
-mongoose.connect(
-  process.env.MONGODB_URI ||
-    "mongodb://user1:password1@ds125871.mlab.com:25871/heroku_0xn0jnk7",
-  {
-    useCreateIndex: true,
-    useNewUrlParser: true,
-  }
-);
-// Start the API server
-app.listen(PORT, () =>
-  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`)
-);
+
+// routes
+app.use("/", routes);
+
+// start the server
+app.listen(PORT, () => {
+  console.log(`You're being served on port ${PORT}!!!`)
+})

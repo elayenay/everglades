@@ -1,43 +1,27 @@
 {
-  "name": "login-register-react",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "delay": "^4.2.0",
-    "mongoose": "^5.10.4",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-pose": "^4.0.8",
-<<<<<<< HEAD
-    "react-scripts": "^3.4.3",
-=======
-    "react-scripts": "3.0.1",
->>>>>>> 28df516966cce4229a8b858de49486cef5b4b9bd
-    "react-spring": "^8.0.20",
-    "yarn-install": "^1.0.0"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "node-sass": "^4.14.1"
-  }
+    "name": "passport-jwt-example",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js",
+        "start-dev": "concurrently \"nodemon server.js\" \"cd client && npm run start\""
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.1",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^5.10.3",
+        "node-sass": "^4.14.1",
+        "passport": "^0.4.1",
+        "passport-jwt": "^4.0.0",
+        "passport-local": "^1.0.0"
+    },
+    "devDependencies": {
+        "concurrently": "^5.3.0",
+        "nodemon": "^2.0.4"
+    }
 }
