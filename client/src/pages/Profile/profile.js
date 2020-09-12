@@ -1,18 +1,13 @@
 import React from "react";
-import profileImg from "../../profile.svg";
+// import profileImg from "../../profile.svg";
 
-export class Profile extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
+const Profile =()=>{
     return (
-      <div className="base-container" ref={this.props.containerRef}>
+      <div className="base-container" >
         <div className="header">Profile</div>
         <div className="content">
           <div className="image">
-            <img src={profileImg} />
+            {/* <img src={profileImg} /> */}
           </div>
           <div className="form">
             <div className="form-group">
@@ -32,5 +27,6 @@ export class Profile extends React.Component {
         </div>
       </div>
     );
-  }
 }
+
+export default Profile;

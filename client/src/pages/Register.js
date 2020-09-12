@@ -14,7 +14,7 @@ const Register = () => {
   const regPasswordRef = useRef();
 
   const doSignup = async () => {
-    const { data } = await axios.post("/auth/login", {
+    const { data } = await axios.post("/auth/register", {
       email: regEmailRef.current.value,
       password: regPasswordRef.current.value,
     });

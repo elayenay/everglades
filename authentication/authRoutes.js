@@ -18,7 +18,7 @@ Router.post('/login', function (req, res) {
                res.send(err);
            }
            // generate a signed son web token with the contents of user object and return it in the response
-           const token = jwt.sign(user.toJSON(), 'superSecret', { expiresIn: '30m'});
+           const token = jwt.sign(user.toJSON(), 'superSecret', { expiresIn: '24h'});
            const { email } = user;
            return res.json({email, token});
         });

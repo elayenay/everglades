@@ -3,7 +3,11 @@ import { useGlobalContext } from "../context/GlobalContext";
 import {
   LOGOUT, GET_WELCOME
 } from "../context/actions";
+import Profile from "../pages/Profile/profile"
+import Navbar from "../pages/Navbar/Navbar"
 import axios from "axios";
+import { BrowserRouter as Router} from "react-router-dom";
+
 
 const AuthenticatedApp = () => {
   const [state, dispatch] = useGlobalContext();
@@ -37,8 +41,11 @@ const AuthenticatedApp = () => {
 
   return (
     <div>
-      {state.welcomeMessage ? <p>{state.welcomeMessage}</p> : <p>Hello</p>}
-      
+      {/* {state.welcomeMessage ? <p>{state.welcomeMessage}</p> : <p>Hello</p>} */}
+      <Router>
+        <Navbar/>
+        <Profile />
+      </Router>
       <button onClick={handleLogout}>Logout</button>
     </div>
   )
