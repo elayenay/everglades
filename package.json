@@ -1,67 +1,27 @@
 {
-    "name": "passport-jwt-example",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node server.js",
-        "start-dev": "concurrently \"nodemon server.js\" \"cd client && npm run start\""
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-        "express": "^4.17.1",
-        "jsonwebtoken": "^8.5.1",
-        "mongoose": "^5.10.3",
-        "node-sass": "^4.14.1",
-        "passport": "^0.4.1",
-        "passport-jwt": "^4.0.0",
-        "passport-local": "^1.0.0"
-    },
-    "devDependencies": {
-        "concurrently": "^5.3.0",
-        "nodemon": "^2.0.4"
-    }
-}
-{
-    "name": "snapshot",
-    "version": "0.1.0",
-    "private": true,
-    "homepage": "https://Yog9.github.io/SnapShot",
-    "dependencies": {
-      "@testing-library/jest-dom": "^4.2.4",
-      "@testing-library/react": "^9.3.2",
-      "@testing-library/user-event": "^7.1.2",
-      "axios": "^0.19.2",
-      "react": "^16.13.1",
-      "react-dom": "^16.13.1",
-      "react-router-dom": "^5.1.2",
-      "react-scripts": "3.4.1"
-    },
-    "scripts": {
-      "predeploy": "npm run build",
-      "deploy": "gh-pages -d build",
-      "start": "react-scripts start",
-      "build": "react-scripts build",
-      "test": "react-scripts test",
-      "eject": "react-scripts eject"
-    },
-    "eslintConfig": {
-      "extends": "react-app"
-    },
-    "browserslist": {
-      "production": [
-        ">0.2%",
-        "not dead",
-        "not op_mini all"
-      ],
-      "development": [
-        "last 1 chrome version",
-        "last 1 firefox version",
-        "last 1 safari version"
-      ]
-    }
+  "name": "sizzle",
+  "version": "1.0.0",
+  "description": "sizzle",
+  "main": "https://github.com/drlanah/everglades/blob/master/package.json",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "start-dev": "concurrently \"nodemon server.js\" \"cd client && npm run start\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.3",
+    "node-sass": "^4.14.1",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.4"
   }
-  
+}
