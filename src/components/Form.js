@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 const Form = ({ handleSubmit, history }) => {
   const [searchEntry, setSearchEntry] = useState("");
+
   const updateSearchInput = (e) => {
     setSearchEntry(e.target.value);
   };

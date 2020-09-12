@@ -6,16 +6,16 @@ const Navigation = () => {
     <nav className="main-nav">
       <ul>
         <li>
-          <NavLink to="/mountain">food based on mood!</NavLink>
+          <NavLink to="/mountain">foods based on mood</NavLink>
         </li>
         <li>
-          <NavLink to="/beach">food based on mood!</NavLink>
+          <NavLink to="/beach">foods based on mood</NavLink>
         </li>
         <li>
-          <NavLink to="/bird">food based on mood!</NavLink>
+          <NavLink to="/bird">foods based on mood</NavLink>
         </li>
         <li>
-          <NavLink to="/food">food based on mood!</NavLink>
+          <NavLink to="/food">foods based on mood</NavLink>
         </li>
       </ul>
     </nav>
