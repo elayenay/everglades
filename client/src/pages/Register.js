@@ -90,7 +90,7 @@ const Register = () => {
           <div className="justify-content-center">
             <button
               type="submit"
-              className="btn btn-primary "
+              className="btn btn-danger "
               style={styles.widths}
             >
               REGISTER
