@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { useGlobalContext } from "../context/GlobalContext";
 import axios from "axios";
 import { LOGIN } from "../context/actions";
+import Logo from "../assets/sizzle.jpg";
 
 const Register = () => {
   const [state, dispatch] = useGlobalContext();
@@ -39,12 +40,20 @@ const Register = () => {
     widths: {
       width: "100%",
     },
+    logo: {
+      width: "15rem",
+    },
   };
 
   return (
     <div className="container">
       <div>
-        <img src="/assets/sizzle.jpg" alt="sizzle logo" className="logo" />
+        <img
+          src={Logo}
+          alt="sizzle logo"
+          className="logo"
+          style={styles.logo}
+        />
       </div>
       <div className="row justify-content-center">
         <form

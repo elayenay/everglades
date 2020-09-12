@@ -4,6 +4,7 @@ import { LOGIN } from "../context/actions";
 import axios from "axios";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Register from "../pages/Register";
+import Logo from "../assets/sizzle.jpg";
 
 const Login = () => {
   const [state, dispatch] = useGlobalContext();
@@ -39,13 +40,21 @@ const Login = () => {
     widths: {
       width: "100%",
     },
+    logo: {
+      width: "15rem",
+    },
   };
 
   return (
     <Router>
       <Route exact path="/">
         <div>
-          <img src="/assets/sizzle.jpg" alt="sizzle logo" className="logo" />
+          <img
+            src={Logo}
+            alt="sizzle logo"
+            className="logo"
+            style={styles.logo}
+          />
         </div>
         <div className="container">
           <div className="row justify-content-center">
