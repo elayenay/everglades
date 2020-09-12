@@ -42,6 +42,7 @@ const Login = () => {
     },
     logo: {
       width: "15rem",
+      margin: "3rem",
     },
   };
 
@@ -62,10 +63,10 @@ const Login = () => {
               className="justify-content-center inputform login"
               onSubmit={handleSubmit}
             >
-              <h2 style={styles.center}>Log in to Sizzle</h2>
-              <p style={styles.center}>
+              <h2 style={styles.center}>Log In</h2>
+              {/* <p style={styles.center}>
                 Create account? <Link to="/register">Register</Link>
-              </p>
+              </p> */}
               <div className="form-group">
                 <label for="exampleInputEmail1">Username</label>
                 <input

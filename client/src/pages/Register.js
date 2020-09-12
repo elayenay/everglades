@@ -42,6 +42,7 @@ const Register = () => {
     },
     logo: {
       width: "15rem",
+      margin: "3rem",
     },
   };
 
@@ -60,10 +61,10 @@ const Register = () => {
           className="justify-content-center inputform login"
           onSubmit={handleSignup}
         >
-          <h2 style={styles.center}>Register for Sizzle</h2>
-          <p style={styles.center}>
+          <h2 style={styles.center}>Register</h2>
+          {/* <p style={styles.center}>
             Already on Sizzle? <Link to="/">Log In</Link>
-          </p>
+          </p> */}
           <div className="form-group">
             <label for="exampleInputEmail1">Username</label>
             <input
@@ -96,7 +97,7 @@ const Register = () => {
             </button>
           </div>
           <small className="subtle-text">
-            Create account? <Link to="/">Log In</Link>
+            Already on Sizzle? <Link to="/">Log In</Link>
           </small>
         </form>
       </div>
