@@ -44,6 +44,9 @@ const Login = () => {
   return (
     <Router>
       <Route exact path="/">
+        <div>
+          <img src="/assets/sizzle.jpg" alt="sizzle logo" className="logo" />
+        </div>
         <div className="container">
           <div className="row justify-content-center">
             <form
@@ -52,7 +55,7 @@ const Login = () => {
             >
               <h2 style={styles.center}>Log in to Sizzle</h2>
               <p style={styles.center}>
-                Create account? <Link to="/register">register</Link>
+                Create account? <Link to="/register">Register</Link>
               </p>
               <div className="form-group">
                 <label for="exampleInputEmail1">Username</label>
@@ -84,7 +87,7 @@ const Login = () => {
                 </button>
               </div>
               <small className="subtle-text">
-                Create account? <Link to="/register">register</Link>
+                Create account? <Link to="/register">Register</Link>
               </small>
             </form>
           </div>

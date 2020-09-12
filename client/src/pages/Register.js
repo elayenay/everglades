@@ -43,6 +43,9 @@ const Register = () => {
 
   return (
     <div className="container">
+      <div>
+        <img src="/assets/sizzle.jpg" alt="sizzle logo" className="logo" />
+      </div>
       <div className="row justify-content-center">
         <form
           className="justify-content-center inputform login"
@@ -50,7 +53,7 @@ const Register = () => {
         >
           <h2 style={styles.center}>Register for Sizzle</h2>
           <p style={styles.center}>
-            Already on Sizzle? <Link to="/">log in</Link>
+            Already on Sizzle? <Link to="/">Log In</Link>
           </p>
           <div className="form-group">
             <label for="exampleInputEmail1">Username</label>
@@ -84,7 +87,7 @@ const Register = () => {
             </button>
           </div>
           <small className="subtle-text">
-            Create account? <Link to="/">log in</Link>
+            Create account? <Link to="/">Log In</Link>
           </small>
         </form>
       </div>
