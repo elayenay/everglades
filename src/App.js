@@ -18,7 +18,7 @@ class App extends Component {
   render() {
     return (
       <PhotoContextProvider>
-        <HashRouter basename="/SnapScout">
+        <HashRouter basename="/sizzle">
           <div className="container">
             <Route
               render={(props) => (
@@ -29,19 +29,15 @@ class App extends Component {
               )}
             />
             <Switch>
-              <Route
-                exact
-                path="/"
-                render={() => <Redirect to="/mountain" />}
-              />
+              <Route exact path="/" render={() => <Redirect to="/sweet" />} />
 
+              <Route path="/sweet" render={() => <Item searchTerm="sweet" />} />
+              <Route path="/salty" render={() => <Item searchTerm="salty" />} />
               <Route
-                path="/mountain"
-                render={() => <Item searchTerm="mountain" />}
+                path="/savory"
+                render={() => <Item searchTerm="savory" />}
               />
-              <Route path="/beach" render={() => <Item searchTerm="beach" />} />
-              <Route path="/bird" render={() => <Item searchTerm="bird" />} />
-              <Route path="/food" render={() => <Item searchTerm="food" />} />
+              <Route path="/sour" render={() => <Item searchTerm="sour" />} />
               <Route
                 path="/search/:searchInput"
                 render={(props) => (
