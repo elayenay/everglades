@@ -4,7 +4,7 @@ import Container from "./Container";
 const Item = ({ searchTerm }) => {
   return (
     <div>
-      <h2>{searchTerm} Pictures</h2>
+      <h2>I am feeling {searchTerm}</h2>
       <Container searchTerm={searchTerm} />
     </div>
   );
