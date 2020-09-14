@@ -1,56 +1,91 @@
-import React, { Component } from "react";
-import PhotoContextProvider from "./context/PhotoContext";
-import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
-import Header from "./components/Header";
-import Item from "./components/Item";
-import Search from "./components/Search";
-import NotFound from "./components/NotFound";
+import React, {lazy, Suspense} from 'react'
+import {connect} from 'react-redux'
+import {Redirect, Route, Switch} from 'react-router-dom'
+import {toast} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+import './css/izmir.min.css'
+import {createStructuredSelector} from 'reselect'
+import {Normalize} from 'styled-normalize'
+import ErrorBoundary from './components/Error/ErrorBoundary'
+import FallBackSpinner from './components/FallBackSpinner'
+import Header from './components/Header'
+import {auth, createUserProfileDocument} from './firebase/utils'
+import {setCurrentUser} from './redux/actions/user'
+import {selectCurrentUser} from './redux/selectors/user'
+import Home from './pages/Home'
 
-class App extends Component {
-  // Prevent page reload, clear input, set URL and push history on submit
-  handleSubmit = (e, history, searchInput) => {
-    e.preventDefault();
-    e.currentTarget.reset();
-    let url = `/search/${searchInput}`;
-    history.push(url);
-  };
+const Shop = lazy(() => import('./pages/Shop'))
+const SignIn = lazy(() => import('./pages/Forms/SignIn'))
+const SignUp = lazy(() => import('./pages/Forms/SignUp'))
+const Checkout = lazy(() => import('./pages/Checkout'))
+
+toast.configure({autoClose: 2000, useLazyContainer: 'true'})
+
+class App extends React.Component {
+  unsubscribeFromAuth = null
+
+  componentDidMount() {
+    const {setCurrentUser} = this.props
+
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
+      if (userAuth) {
+        const userRef = await createUserProfileDocument(userAuth)
+
+        userRef.onSnapshot((snapShot) => {
+          setCurrentUser({
+            id: snapShot.id,
+            ...snapShot.data(),
+          })
+        })
+      }
+
+      setCurrentUser(userAuth)
+    })
+  }
+
+  componentWillUnmount() {
+    this.unsubscribeFromAuth()
+  }
 
   render() {
     return (
-      <PhotoContextProvider>
-        <HashRouter basename="/sizzle">
-          <div className="container">
-            <Route
-              render={(props) => (
-                <Header
-                  handleSubmit={this.handleSubmit}
-                  history={props.history}
-                />
-              )}
-            />
-            <Switch>
-              <Route exact path="/" render={() => <Redirect to="/sweet" />} />
-
-              <Route path="/sweet" render={() => <Item searchTerm="sweet" />} />
-              <Route path="/salty" render={() => <Item searchTerm="salty" />} />
+      <>
+        <ErrorBoundary>
+          <Normalize />
+          <Header />
+          <Switch>
+            <Suspense fallback={FallBackSpinner()}>
+              <Route exact path="/" component={Home} />
+              <Route path="/shop" component={Shop} />
+              <Route exact path="/checkout" component={Checkout} />
               <Route
-                path="/savory"
-                render={() => <Item searchTerm="savory" />}
+                exact
+                path="/signin"
+                render={() =>
+                  this.props.currentUser ? <Redirect to="/" /> : <SignIn />
+                }
               />
-              <Route path="/sour" render={() => <Item searchTerm="sour" />} />
               <Route
-                path="/search/:searchInput"
-                render={(props) => (
-                  <Search searchTerm={props.match.params.searchInput} />
-                )}
+                exact
+                path="/signup"
+                render={() =>
+                  this.props.currentUser ? <Redirect to="/" /> : <SignUp />
+                }
               />
-              <Route component={NotFound} />
-            </Switch>
-          </div>
-        </HashRouter>
-      </PhotoContextProvider>
-    );
+            </Suspense>
+          </Switch>
+        </ErrorBoundary>
+      </>
+    )
   }
 }
 
-export default App;
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  setCurrentUser: (user) => dispatch(setCurrentUser(user)),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
