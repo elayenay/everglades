@@ -1,25 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import 'typeface-roboto';
-import App from './Containers/App';
-import registerServiceWorker from './registerServiceWorker';
-import {Provider} from 'react-redux';
-import {createStore,applyMiddleware} from 'redux';
-import reducer from './store/reducers/reducer';
-import thunk from 'redux-thunk';
+import React from 'react'
+import {render} from 'react-dom'
+import {Provider} from 'react-redux'
+import {BrowserRouter} from 'react-router-dom'
+import {PersistGate} from 'redux-persist/integration/react'
+import {persistor, store} from './redux/store'
+import App from './App'
+import './index.css'
 
-const logger = store =>{
-
-    return next => {
-        return action => {
-            const result=next(action);
-            return result;
-        }
-    };
-}
-
-const store = createStore(reducer,applyMiddleware(logger,thunk));
-
-ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
-registerServiceWorker();
+render(
+  <Provider store={store}>
+    <BrowserRouter>
+      <PersistGate persistor={persistor}>
+        <App />
+      </PersistGate>
+    </BrowserRouter>
+  </Provider>,
+  document.getElementById('root'),
+)
