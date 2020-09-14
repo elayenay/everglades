@@ -1,0 +1,128 @@
+[
+  {
+    "name": "food name",
+    "price": 0,
+    "imgsrc": "food image here",
+    "id": 1,
+    "isMostOrdered": true,
+    "quantity": 0
+  },
+  {
+    "name": "food name",
+    "price": 0,
+    "imgsrc": "food image here",
+    "id": 2,
+    "isMostOrdered": true,
+    "quantity": 0
+  },
+
+  {
+    "name": "food name",
+    "price": 0,
+    "imgsrc": "food image here",
+    "id": 3,
+    "isMostOrdered": false,
+    "quantity": 0
+  },
+
+  {
+    "name": "food name",
+    "price": 0,
+    "imgsrc": "food image here",
+    "id": 4,
+    "isMostOrdered": true,
+    "quantity": 0
+  },
+  {
+    "name": "food name",
+    "price": 0,
+    "imgsrc": "food image here",
+    "id": 5,
+    "isMostOrdered": false,
+    "quantity": 0
+  },
+  {
+    "name": "food name",
+    "price": 0,
+    "imgsrc": "food image here",
+    "id": 6,
+    "isMostOrdered": false,
+    "quantity": 0
+  },
+
+  {
+    "name": "food name",
+    "price": 0,
+    "imgsrc": "food image here",
+    "id": 7,
+    "isMostOrdered": false,
+    "quantity": 0
+  },
+  {
+    "name": "food name",
+    "price": 0,
+    "imgsrc": "food image here",
+    "id": 8,
+    "isMostOrdered": true,
+    "quantity": 0
+  },
+
+  {
+    "name": "food name",
+    "price": 0,
+    "imgsrc": "food image here",
+    "id": 9,
+    "isMostOrdered": false,
+    "quantity": 0
+  },
+  {
+    "name": "food name",
+    "price": 0,
+    "imgsrc": "food image here",
+    "id": 10,
+    "isMostOrdered": true,
+    "quantity": 0
+  },
+
+  {
+    "name": "food name",
+    "price": 0,
+    "imgsrc": "food image here",
+    "id": 11,
+    "isMostOrdered": true,
+    "quantity": 0
+  },
+  {
+    "name": "food name",
+    "price": 0,
+    "imgsrc": "food image here",
+    "id": 12,
+    "isMostOrdered": false,
+    "quantity": 0
+  },
+
+  {
+    "name": "food name",
+    "price": 0,
+    "imgsrc": "food image here",
+    "id": 13,
+    "isMostOrdered": false,
+    "quantity": 0
+  },
+  {
+    "name": "food name",
+    "price": 0,
+    "imgsrc": "food image here",
+    "id": 14,
+    "isMostOrdered": true,
+    "quantity": 0
+  },
+  {
+    "name": "food name",
+    "price": 0,
+    "imgsrc": "food image here",
+    "id": 15,
+    "isMostOrdered": true,
+    "quantity": 0
+  }
+]
